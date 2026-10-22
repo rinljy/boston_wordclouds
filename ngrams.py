@@ -6,14 +6,14 @@ Upload each one to wordclouds.com, clean by hand, and save cleaned versions for 
 """
 
 import glob
+import math
 import re
 import string
 from collections import Counter
 import pandas as pd
-from nltk.collocations import (BigramAssocMeasures, BigramCollocationFinder, TrigramAssocMeasures, TrigramCollocationFinder)
 from nltk.tokenize import TweetTokenizer
 
-MIN_FREQ = 10        # Atlanta used 2 for one Reddit file; raise or lower to taste
+MIN_FREQ = 10        # Atlanta used 2 for one Reddit file; raise or lower to vibe
 TOP_UNIGRAMS = 300   # how many rows to export for hand-cleaning
 TOP_BIGRAMS = 200
 TOP_TRIGRAMS = 100
@@ -101,20 +101,16 @@ for f in sorted(files):
     print(f"  unigrams: {len(top_uni)} saved (counts {lo}-{hi})")
 
     # bigrams
-    bf = BigramCollocationFinder.from_words(tokens)
-    bf.apply_freq_filter(MIN_FREQ)
-    bf.apply_word_filter(is_stop)
-    bi = bf.score_ngrams(BigramAssocMeasures().pmi)[:TOP_BIGRAMS]
+    bi = collocations(tokens, 2, MIN_FREQ, TOP_BIGRAMS,
+                      lambda gram: any(is_stop(word) for word in gram))
     if bi:
         weights = scale([s for _, s in bi], lo, hi)
         save([(wt, " ".join(g)) for (g, _), wt in zip(bi, weights)], f"{n}_bigrams.csv")
     print(f"  bigrams:  {len(bi)} saved")
 
     # trigrams
-    tf = TrigramCollocationFinder.from_words(tokens)
-    tf.apply_freq_filter(max(2, MIN_FREQ // 2))   # trigrams rarer
-    tf.apply_ngram_filter(lambda a, b, c: is_stop(a) or is_stop(c))
-    tri = tf.score_ngrams(TrigramAssocMeasures().pmi)[:TOP_TRIGRAMS]
+    tri = collocations(tokens, 3, max(2, MIN_FREQ // 2), TOP_TRIGRAMS,
+                       lambda gram: is_stop(gram[0]) or is_stop(gram[2]))
     if tri:
         weights = scale([s for _, s in tri], lo, hi)
         save([(wt, " ".join(g)) for (g, _), wt in zip(tri, weights)], f"{n}_trigrams.csv")

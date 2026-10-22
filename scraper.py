@@ -50,7 +50,6 @@ def keep_row(row):
         return True
     return False
 
-
 # Read and Filter articles
 files = glob.glob(os.path.join(INPUT_FOLDER, "*.csv"))
 if not files:
