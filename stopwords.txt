@@ -1,0 +1,113 @@
+# Words to leave out of the word clouds
+
+i me my myself we our ours ourselves you your yours yourself yourselves
+he him his himself she her hers herself it its itself they them their theirs themselves
+what which who whom whose this that these those am is are was were be been being
+have has had having do does did doing a an the and but if or because as until while
+of at by for with about against between into through during before after above below
+to from up down in out on off over under again further then once here there when where
+why how all any both each few more most other some such no nor not only own same so
+than too very can will just should now would could might must may shall also
+s t d ll m re ve o y don didn doesn isn wasn aren weren hasn haven hadn won wouldn
+couldn shouldn ain let lets per via yet ever every even still much many lot lots
+
+i'm i've i'd i'll you're you've you'll you'd he's she's it's we're we've we'll we'd
+they're they've they'll they'd that's there's here's what's who's don't doesn't didn't
+can't couldn't won't wouldn't shouldn't isn't aren't wasn't weren't haven't hasn't
+hadn't let's y'all ain't
+
+get gets got getting make makes made making go goes went going gone come comes came
+see seen saw say says said saying think thinks thought know knows knew known
+take takes took taken give gives gave given want wants wanted need needs needed
+like really actually basically literally pretty maybe probably sure thing things
+stuff way well yes yeah ok okay one two three four five first second last next
+new old year years month months week weeks day days time times today yesterday
+tomorrow ago since around another able often already always never sometimes
+something anything everything nothing someone anyone everyone people person
+part kind sort bit back away right left put use used using look looks looking
+including include includes across among within without
+
+told according officials official spokesperson spokesman spokeswoman statement
+reported report reports reporter reporting news story stories article
+interview asked added noted continued announced announcement monday tuesday
+wednesday thursday friday saturday sunday january february march april may june
+july august september october november december mr mrs ms dr jr st inc
+percent million billion number numbers
+globe herald wbur wgbh nbc cbs abc fox wcvb photo photos video image caption
+subscribe newsletter email click advertisement
+
+boston boston's massachusetts mass ma city's
+roxbury roxbury's nubian dudley fort highland jackson madison
+dorchester dorchester's fields codman uphams savin ashmont neponset
+mattapan jamaica plain south end
+
+im ive id youre youve youll theyre theyve dont doesnt didnt cant couldnt wouldnt
+shouldnt isnt arent wasnt werent wont havent hasnt hadnt yall theres heres lol lmao
+lmfao omg idk ikr tbh imo imho btw fyi edit edited update upsate op
+ops reddit redditor sub subreddit thread comment comments post posted posting yep yup nah
+uh um okey k hmm etc etcetera thinking http https www com net org
+near fine little though personal mile less due compare find couple late several seem
+different base mostly real hope ready minute mind depends guess perspective state decide yrs
+send keep hour ins east west ac accordance accordingly act ad adj ae af
+afterwards ag ah aj al allow allows almost alone along although amongst amoungst amount
+announce anybody anyhow anymore anyway anyways anywhere ao ap apart apparently appear appreciate appropriate
+approximately ar arise a's aside ask asking associated au auth av aw awfully ax
+ay az b b1 b2 b3 ba bc bd became become becomes becoming beforehand
+begin beginning beginnings begins behind believe beside besides best better beyond bi biol bj
+bk bl bn bottom bp br brief briefly bs bt bu bx c c1
+c2 c3 ca call cannot cc cd ce certain certainly cf cg ch ci
+cit cj cl clearly cm c'mon cn co con concerning consequently consider considering contain
+containing contains corresponding course cp cq cr cry cs c's ct cu currently cv
+cx cy cz d2 da date dc dd de definitely describe described despite detail
+df di dj dk dl done downwards dp ds dt du dx dy e
+e2 e3 ea ec ed edu ee ef eg ei eight eighty either ej
+el eleven else elsewhere em en ending enough entirely eo ep eq er es
+especially est et et-al eu ev everybody everywhere ex exactly example except ey f
+f2 fa far fc ff fi fifteen fifth fify fill fix fj fl fn
+fo followed following follows former formerly forth forty found fr front fs ft fu
+full furthermore fy g ga ge gi giving gj gl gotten gr greetings gs
+gy h h2 h3 happens hardly hed he'd he'll hello hence hereafter hereby herein
+hereupon hes hh hi hid hither hj ho hopefully howbeit however how's hr hs
+hu hundred hy i2 i3 i4 i6 i7 i8 ia ib ibid ic ie
+ig ignored ih ii ij il immediate immediately inasmuch indeed index indicate indicated indicates
+insofar instead invention inward io ip iq ir itd it'd it'll iv ix iy
+iz j jj js jt ju ke keeps kept kg kj km ko l
+l2 la largely lately later latter latterly lb lc le least les lest lf
+liked likely lj ln lo los lr ls lt ltd m2 mainly mean means
+meantime meanwhile merely mg mightn mightn't mine miss ml mn mo moreover mt mu
+mug mustn mustn't n n2 na name namely nay nc nd ne nearly necessarily
+necessary needn needn't neither nevertheless ng ni nine ninety nj nl nn nobody non
+none nonetheless noone normally nos novel nowhere nr ns nt ny oa ob obtain
+obtained obviously oc od og oh oi oj ol om omitted ones onto oo
+oq ord os ot others otherwise ou ought outside overall ow owing ox oz
+p p1 p2 p3 page pagecount pages par particular particularly pas past pc pd
+pe perhaps pf ph pi pj pk pl placed please plus pm pn po
+possible possibly potentially pp pq pr predominantly present presumably previously primarily promptly provides ps
+pt pu py q qj qu que quickly quite qv r r2 ra ran
+rather rc rd readily reasonably recent recently ref refs regarding regardless regards related relatively
+research-articl respectively resulted resulting rf rh ri rj rl rm rn ro rq rr
+rs rt ru run rv ry s2 sa sc sd se sec secondly section
+seeing seemed seeming seems self selves sensible sent seriously seven sf shan shan't shed
+she'd she'll shes should've show showed shown showns shows si side significant significantly similar
+similarly sincere six sixty sj sl slightly sm sn somebody somehow somethan sometime somewhat
+somewhere soon sorry sp specifically specified specify specifying sq sr ss stop strongly substantially
+successfully sufficiently suggest sup sy sz t1 t2 t3 taking tb tc td te
+tell ten tends tf th thank thanks thanx that'll thats that've thence thereafter thereby
+thered therefore therein there'll thereof therere thereto thereupon there've theyd thickv thin third thorough
+thoroughly thou thoughh thousand throug throughout thru thus ti til tip tj tl tm
+tn together top toward towards tp tq tr tried tries truly try trying ts
+t's tt tv twelve twenty twice tx u u201d ue ui uj uk un
+unfortunately unless unlike unlikely unto uo upon ups ur us useful usefully usefulness uses
+usually ut v va various vd viz vj vo vol vols volumtype vq vs
+vt vu w wa wed welcome well-b whatever what'll whats whence whenever when's whereafter
+whereas whereby wherein wheres where's whereupon wherever whether whim whither whod whoever whole who'll
+whomever whos why's wi widely willing wish wo wonder words world x x1 x2
+x3 xf xi xj xk xl xn xo xs xt xv xx y2 yj
+yl youd yr ys yt z zero zi zz pairs jeans area place pope
+cut ave looked personally places areas
+
+# Left out on purpose because they matter for community health
+#   affected affecting affects afford available bill care cause causes center changes close
+#   current district effect empty fire help home importance important information inner interest
+#   issue life line low mill move poorly proud research results scores serious
+#   stay street system test unit value
