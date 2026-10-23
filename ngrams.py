@@ -6,11 +6,12 @@ Upload each one to wordclouds.com, clean by hand, and save cleaned versions for 
 """
 
 import glob
-import math
 import re
 import string
 from collections import Counter
 import pandas as pd
+import math
+from nltk.collocations import (BigramAssocMeasures, BigramCollocationFinder, TrigramAssocMeasures, TrigramCollocationFinder)
 from nltk.tokenize import TweetTokenizer
 
 MIN_FREQ = 10        # Atlanta used 2 for one Reddit file; raise or lower to vibe
@@ -47,7 +48,7 @@ def tokenise(text):
     text = re.sub(r"https?://\S+|www\.\S+|\S+@\S+", " ", text)   # links, emails
     for p in PHRASES_TO_REMOVE:
         text = re.sub(rf"\b{re.escape(p)}\b", " ", text)
-    tokens = tknzr.tokenise(text)
+    tokens = tknzr.tokenize(text)
     # keep real words: letters (and inner apostrophes/hyphens), 2+ characters
     return [t.strip("-'") for t in tokens
             if t not in PUNCT and re.fullmatch(r"[a-z][a-z'\-]*[a-z]", t)]
@@ -83,6 +84,20 @@ def save(rows, path):
 def is_stop(w):
     return w in STOP or len(w) < 3
 
+def collocations(tokens, n, min_freq, limit, word_filter):
+    """Return the most strongly associated n-grams using pointwise mutual information."""
+    frequencies = Counter(tokens)
+    ngram_frequencies = Counter(zip(*(tokens[i:] for i in range(n))))
+    total = len(tokens)
+    scored = []
+    for gram, frequency in ngram_frequencies.items():
+        if frequency < min_freq or word_filter(gram):
+            continue
+        score = math.log2(frequency * total ** (n - 1) /
+                          math.prod(frequencies[word] for word in gram))
+        scored.append((gram, score))
+    return sorted(scored, key=lambda item: item[1], reverse=True)[:limit]
+
 files = glob.glob("*_raw.txt")
 if not files:
     raise SystemExit("No *_raw.txt files here. Run scraper.py first.")
@@ -109,8 +124,10 @@ for f in sorted(files):
     print(f"  bigrams:  {len(bi)} saved")
 
     # trigrams
-    tri = collocations(tokens, 3, max(2, MIN_FREQ // 2), TOP_TRIGRAMS,
-                       lambda gram: is_stop(gram[0]) or is_stop(gram[2]))
+    tf = TrigramCollocationFinder.from_words(tokens)
+    tf.apply_freq_filter(max(2, MIN_FREQ // 2))   # trigrams rarer
+    tf.apply_ngram_filter(lambda a, b, c: is_stop(a) or is_stop(c))
+    tri = tf.score_ngrams(TrigramAssocMeasures().pmi)[:TOP_TRIGRAMS]
     if tri:
         weights = scale([s for _, s in tri], lo, hi)
         save([(wt, " ".join(g)) for (g, _), wt in zip(tri, weights)], f"{n}_trigrams.csv")
