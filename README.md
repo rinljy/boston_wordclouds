@@ -20,3 +20,14 @@
   - unigrams: 300 saved (counts 401-6263)
   - bigrams:  200 saved
   - trigrams: 100 saved
+
+
+## Next Steps 
+- open on wordcloud and hand clean ngrams 
+    - places and proper nouns
+    - words that don't descibe neighbourhood w/o context
+    - verbs that don't say anything on their own
+    - plurals/duplicates
+    - save as neighbourhood_ngrams_clean.csv
+- combiner.py
+- Make clouds!
