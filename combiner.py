@@ -14,8 +14,9 @@ APPLY_RULE_5 = True
 def read(path):
     if not os.path.exists(path):
         return pd.DataFrame(columns=["weight", "word"])
-    df = pd.read_csv(path, sep=None, engine="python")   # handles , or ;
-    df.columns = [c.strip().lower() for c in df.columns]
+    # handles , or ; and the invisible BOM character wordclouds.com adds
+    df = pd.read_csv(path, sep=None, engine="python", encoding="utf-8-sig")
+    df.columns = [c.replace("\ufeff", "").strip().strip('"').lower() for c in df.columns]
     df = df[["weight", "word"]].dropna()
     df["word"] = df["word"].astype(str).str.strip().str.lower()
     return df
